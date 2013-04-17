@@ -1,5 +1,3 @@
-<div class="home_bg">
-	<div class="home clickable-1">
-		<div class="home_icon"></div>
-	</div>
+<div class="my clickable-6">
+		Hello world! from Screen 5
 </div>
