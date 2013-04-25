@@ -73,8 +73,8 @@ var app = {
         this.screen7 = this.loadAssetFile('screen7.txt');
         this.bodyImages = [ '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg',  '/img/flower.jpg' ];
         page.base('/babygame');
-        page('/screen/:id', app.screenShow);
-        page('/screen/1');
+        page('#/screen/:id', app.screenShow);
+        page('#/screen/1');
     },
 
     screenShow : function(ctx, next) {
@@ -94,12 +94,12 @@ var app = {
         }
 
         // clickable links
-        $("div[class*=' clickable-']").bind('touchend', function() {
+        $("div[class*='clickable-']").bind('touchend', function() {
             cs = $(this).attr("class").split(/\s+/);
             $.each(cs, function(index, item) {
                 cn = item.split("-");
                 if (cn[0] == "clickable") {
-                    page('/screen/' + cn[1]);
+                    page('#/screen/' + cn[1]);
                 }
             });
         });
