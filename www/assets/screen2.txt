@@ -1,6 +1,6 @@
 <div>
 
-	<div class="puzzlejs" data-pieces=4 data-image="img/1.jpg"></div>	
+	<div class="puzzle" data-pieces=4 data-image="img/1.jpg"></div>	
 
 	<div class="clickable-6" style="position:absolute; left:20%; top:20%;">
 		<img src="img/button.png" />

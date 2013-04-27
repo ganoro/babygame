@@ -103,6 +103,13 @@ var app = {
                 }
             });
         });
+
+        $(".puzzle").each(function(item) {
+            var p = new Puzzle($(this));
+        });
+
+
+
     },
 
     loadAssetFile : function(filename) {
