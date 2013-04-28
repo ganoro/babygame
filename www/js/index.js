@@ -29,6 +29,9 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.addEventListener('offline', this.offline, false);
         document.addEventListener('online', this.online, false);
+        document.addEventListener('touchmove', this.touchmove, false);
+        document.addEventListener('pause', this.pause, false);
+
     },
     // deviceready Event Handler
     //
@@ -52,6 +55,15 @@ var app = {
         app.onlineEvent();
     },
 
+    touchmove : function(e) {
+        e.preventDefault();
+    },
+
+    pause : function() {
+        alert("pause");
+        document.location.href='#/screen/1';
+    },
+
     onlineEvent : function () {},
     offlineEvent : function() {},
 
@@ -71,21 +83,22 @@ var app = {
         this.screen5 = this.loadAssetFile('screen5.txt');
         this.screen6 = this.loadAssetFile('screen6.txt');
         this.screen7 = this.loadAssetFile('screen7.txt');
-        this.bodyImages = [ '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg', '/img/flower.jpg',  '/img/flower.jpg' ];
-        page.base('/babygame');
+        
+        this.bodyImages = [ 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
         page('#/screen/:id', app.screenShow);
         page('#/screen/1');
     },
 
     screenShow : function(ctx, next) {
+
         var raw = eval('app.screen' + ctx.params.id);
         var compiled = _.template(raw);
+
         var messages = { }, config = { };
         var content = compiled($.extend({}, messages, config));
-
-        $('body').css('background', 'url(' + page.base() + '/' + app.bodyImages[ctx.params.id - 1] + ') no-repeat');
+        
+        $('body').css('background', 'url(' + app.bodyImages[ctx.params.id - 1] + ') no-repeat');
         $('body').css('-webkit-background-size', 'cover');
-
         $('#mainpage').html(content);
 
         // if it's not the welcome page - add the home button
@@ -108,15 +121,16 @@ var app = {
             var p = new Puzzle($(this));
         });
 
-
-
     },
 
     loadAssetFile : function(filename) {
-         var strUrl = "assets/" + filename, strReturn = "";
-          jQuery.ajax({ url: strUrl, async:false,
+         var strUrl = "js/" + filename, strReturn = "";
+          jQuery.ajax({ url: strUrl, async:false, dataType: "text", 
             success: function(html) {
               strReturn = html;
+            },
+            error: function() {
+              strReturn = "error reading file";
             }
           });
           return strReturn;

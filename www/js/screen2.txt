@@ -1,0 +1,5 @@
+<div>
+
+	<div class="puzzle" style="width:80%"></div>	
+
+</div>	
