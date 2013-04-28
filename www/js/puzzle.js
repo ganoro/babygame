@@ -4,48 +4,39 @@
 var Puzzle = (function () {
     // private static
     var nextId = 1;
-    var images = [ { img: '1.jpg', pieces : ['1a.png', '1b.png', '1c.png', '1d.png'] } ];
+    var images = [ { img: '1.jpg', pieces : ['1a.png', '1b.png', '1c.png', '1d.png'], offset : [[11, 497] , [100, 623], [130, 630], [182, 492]] } ];
 
     // constructor
     var cls = function (e) {
 
         for (var i = images[0].pieces.length - 1; i >= 0; i--) {
             var p = images[0].pieces[i];
-            $(e).append('<div class="piece' + i +'target" style="position:absolute;top: ' + (i * 15) + '%;left:20%"><img src="img/' + p + '"></div>');
-            $(e).append('<div class="piece' + i +'" style="position:absolute;top: ' + (i * 15) + '%;left:60%"><img src="img/' + p + '"></div>');
+            var randomTop = Math.ceil(Math.random()*70); /* Pick random number between 1 and 2 */
+            var randomLeft = Math.ceil(Math.random()*70); /* Pick random number between 1 and 2 */
 
+            $(e).append('<div class="piece' + i +'target" style="position:absolute;top:'+ images[0].offset[i][0] +'px;left:'+ images[0].offset[i][1] +'px"><img src="img/' + p + '"></div>');
+            $(e).append('<div class="piece' + i +'" style="position:absolute;top: ' + randomTop + '%;left:'+ randomLeft + '%"><img src="img/' + p + '"></div>');
+
+            $('.piece'+ i + 'target').fadeTo(0, 0.3);
             $('.piece' + i ).draggable();
-            $('.piece').droppable({tolerance: "intersect" , accept : 'piece' + i,
+            $('.piece' + i + 'target').droppable({tolerance: "intersect" , accept : '.piece' + i,
                 drop: function( event, ui ) {
-                    var y = $('.piece1').position().top - $('.piece').position().top;
-                    var x = $('.piece1').position().left - $('.piece').position().left;
-                    $('.piece1').transition({  x: -x + 'px', y: -y + 'px'})
-                    $('.piece1').draggable( 'disable' );
-                    }
+                    var draggable = $(ui.draggable);
+                    var droppable = $(event.target);
+                    var y = draggable.position().top - droppable.position().top;
+                    var x = draggable.position().left - droppable.position().left;
+                    draggable.transition({  x: -x + 'px', y: -y + 'px'})
+                    draggable.draggable( 'disable' );
+                    draggable.css('z-index', -3000);
+                    droppable.css('z-index', -3000);
+                }   
             });
+            $('.piece' + i + 'target').css('z-index', -2000)
 
             $('.piece' + i).click(function() {
                 alert(JSON.stringify($(this).position()));
             });
-
-
-
-
         };
-
-        // $(e).append('<div class="piece" style="position:absolute;top: 30%; left:40%"><img src="img/1a.png"></div>');
-        // $(e).append('<div class="piece1" style="position:absolute;top: 0%"><img src="img/1a.png"></div>');
-
-        // $('.piece').fadeTo(0, 0.3);
-        // $('.piece1').draggable();
-        // $('.piece').droppable({tolerance: "intersect" , 
-        //   drop: function( event, ui ) {
-        //     var y = $('.piece1').position().top - $('.piece').position().top;
-        //     var x = $('.piece1').position().left - $('.piece').position().left;
-        //     $('.piece1').transition({  x: -x + 'px', y: -y + 'px'})
-        //     $('.piece1').draggable( 'disable' );
-        //   }
-        // });
 
     };
 
