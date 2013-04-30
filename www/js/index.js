@@ -1,33 +1,13 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
     },
-    // Bind Event Listeners
-    //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('offline', this.offline, false);
+        document.addEventListener('load', this.load, false);
         document.addEventListener('online', this.online, false);
         document.addEventListener('touchmove', this.touchmove, false);
         document.addEventListener('pause', this.pause, false);
@@ -40,12 +20,12 @@ var app = {
     onDeviceReady: function() {
         app.devicereadyEvent();
     },
-    // offline Event Handler
+    // load Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
-    offline: function() {
-        app.offlineEvent();
+    load: function() {
+        alert('load');
     },
     // online Event Handler
     //
@@ -117,10 +97,37 @@ var app = {
             });
         });
 
-        $(".puzzle").each(function(item) {
-            var p = new Puzzle($(this));
-        });
+        switch(parseInt(ctx.params.id)) {
+            case 2 :
+                app.puzzlePage();
+                break;
+            case 3 :
+                app.paitingPage(); 
+                break;
+            case 4 :
+                app.memoryPage(); 
+                break;
+            case 5 :
+                app.soundPage(); 
+                break;
 
+        }
+    },
+
+    puzzlePage : function() {
+        var p = new Puzzle($(".puzzle"));
+    },
+
+    paitingPage : function() {
+        var p = new Painting();
+    },
+
+    memoryPage : function() {
+        var p = new Memory();
+    },
+
+    soundPage : function() {
+        // var p = new Sound();
     },
 
     loadAssetFile : function(filename) {

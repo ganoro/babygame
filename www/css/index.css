@@ -58,3 +58,41 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.black-letter-medium {
+    background-image: url(../img/tiger%20image.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-color: white;    
+    padding: 0 0.2em 0em 0.2em;
+    text-align: center;
+    color: blue;
+    font: 4em "courier";
+    font-weight: 800;
+    width: 1em;
+    height: 2em;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border : solid medium black;
+    font-family: CourierNewPS-BoldMT;
+}
+
+.blue-letter {
+    background-color: white;    
+    padding: 0em 0em 0em 0em;
+    text-align: center;
+    color: blue;
+    width: 400px;
+    height: 400px;
+    font: 17em "courier";
+    font-weight: 900;
+    border : solid thick @letterColor;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    font-family: CourierNewPS-BoldMT;
+    border : solid medium black;
+}
+
+
