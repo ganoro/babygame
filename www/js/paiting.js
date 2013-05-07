@@ -12,6 +12,9 @@ var Painting = (function () {
         var sigCanvas = document.getElementById("canvasSignature");
         var context = sigCanvas.getContext("2d");
         context.strokeStyle = 'Red';
+        context.lineWidth = 10;
+        context.lineCap = "round";
+
         // create a drawer which tracks touch movements
         var drawer = {
            isDrawing: false,
@@ -30,6 +33,8 @@ var Painting = (function () {
               if (this.isDrawing) {
                  this.touchmove(coors);
                  this.isDrawing = false;
+
+
               }
            }
         };
