@@ -64,7 +64,7 @@ var app = {
         this.screen6 = this.loadAssetFile('screen6.txt');
         this.screen7 = this.loadAssetFile('screen7.txt');
         
-        this.bodyImages = [ 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
+        this.bodyImages = [ 'img/flower.jpg', 'img/flower.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/flower.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
         page('#/screen/:id', app.screenShow);
         page('#/screen/1');
     },
