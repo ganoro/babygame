@@ -40,8 +40,7 @@ var app = {
     },
 
     pause : function() {
-        alert("pause");
-        document.location.href='#/screen/1';
+        // page('#/screen/1');
     },
 
     onlineEvent : function () {},
@@ -49,11 +48,6 @@ var app = {
 
     devicereadyEvent : function() {
         var parentElement = document.getElementById('deviceready');
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
 
         this.home = this.loadAssetFile('home.txt');
         this.screen1 = this.loadAssetFile('screen1.txt');
@@ -64,7 +58,7 @@ var app = {
         this.screen6 = this.loadAssetFile('screen6.txt');
         this.screen7 = this.loadAssetFile('screen7.txt');
         
-        this.bodyImages = [ 'img/flower.jpg', 'img/flower.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/flower.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
+        this.bodyImages = [ 'img/flower.jpg', 'img/back_puzzle.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/back_touch.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
         page('#/screen/:id', app.screenShow);
         page('#/screen/1');
     },
