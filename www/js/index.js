@@ -47,9 +47,10 @@ var app = {
     offlineEvent : function() {},
 
     devicereadyEvent : function() {
-        var parentElement = document.getElementById('deviceready');
+        app.renderSplashAnimation();
 
         this.home = this.loadAssetFile('home.txt');
+        this.splash = this.loadAssetFile('splash.txt');
         this.screen1 = this.loadAssetFile('screen1.txt');
         this.screen2 = this.loadAssetFile('screen2.txt');
         this.screen3 = this.loadAssetFile('screen3.txt');
@@ -57,10 +58,14 @@ var app = {
         this.screen5 = this.loadAssetFile('screen5.txt');
         this.screen6 = this.loadAssetFile('screen6.txt');
         this.screen7 = this.loadAssetFile('screen7.txt');
-        
+
         this.bodyImages = [ 'img/flower.jpg', 'img/back_puzzle.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/back_touch.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
         page('#/screen/:id', app.screenShow);
         page('#/screen/1');
+    },
+
+    renderSplashAnimation : function() {
+        alert(app.splash);
     },
 
     screenShow : function(ctx, next) {
