@@ -47,10 +47,24 @@ var app = {
     offlineEvent : function() {},
 
     devicereadyEvent : function() {
-        app.renderSplashAnimation();
+        var self = this;
+        $('#logo1').transition({ scale: 1.1 , easing: 'easeInOutCirc', duration: 500})
+            .transition({ scale: 1 , easing: 'easeInOutCirc', delay : 200, duration: 500 }, function() {
+                $('#gback').fadeTo(8000, 1);
+                $('#gsplash').transition({ x: '+350px', y: '-300px', delay : 600, easing: 'easeInOutCirc', duration : 2600 } , function() {
+                        $('.puzzle').fadeTo('fast', 1);
+                        $('.memory').fadeTo('fast', 1);
+                        $('.painting').fadeTo('fast', 1);
+                        $('.sounds').fadeTo('fast', 1);
 
+                        return;
+                        self.start();
+                });
+            });
+    },
+
+    start : function() {
         this.home = this.loadAssetFile('home.txt');
-        this.splash = this.loadAssetFile('splash.txt');
         this.screen1 = this.loadAssetFile('screen1.txt');
         this.screen2 = this.loadAssetFile('screen2.txt');
         this.screen3 = this.loadAssetFile('screen3.txt');
@@ -59,13 +73,9 @@ var app = {
         this.screen6 = this.loadAssetFile('screen6.txt');
         this.screen7 = this.loadAssetFile('screen7.txt');
 
-        this.bodyImages = [ 'img/flower.jpg', 'img/back_puzzle.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/back_touch.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
+        this.bodyImages = [ 'img/1/1-background.png', 'img/back_puzzle.jpg', 'img/back_painting.jpg', 'img/back_memory.jpg', 'img/back_touch.jpg', 'img/flower.jpg',  'img/flower.jpg' ];
         page('#/screen/:id', app.screenShow);
         page('#/screen/1');
-    },
-
-    renderSplashAnimation : function() {
-        alert(app.splash);
     },
 
     screenShow : function(ctx, next) {

@@ -1,19 +1,30 @@
 <div>
-	Hello world! from Screen 1<br/>
+	<div class="clouds" style="position:absolute; left:20%; top:120px"></div>
+	<div class="airplain" style="position:absolute; left:20%; top:120px"></div>
+	<div class="balon" style="position:absolute; left:20%; top:120px"></div>
+
+	<div class="mute" style="position:absolute; left:3%; top:20px">
+			<img src="img/1/1-mute.png" style="width:80px" />
+	</div>
 	
-	<div class="clickable-2" style="position:absolute; left:20%; top:120px;">
-		<img src="img/button.png" />
+	<div class="purchase" style="position:absolute; left:88%; top:65%">
+		<img src="img/1/1-purchase.png" style="width:80px" />
+	</div>
+
+
+	<div class="clickable-2" style="position:absolute; left:20%; top:120px">
+		<img src="img/1/1-puzzle.png" style="width:230px" />
 	</div>
 
 	<div class="clickable-3" style="position:absolute; left:60%; top:120px">
-		<img src="img/button.png" />
+		<img src="img/1/1-painting.png" style="width:230px"/>
 	</div>	
 
-	<div class="clickable-4" style="position:absolute; left:20%; top:500px;">
-		<img src="img/button.png" />
+	<div class="clickable-4" style="position:absolute; left:20%; top:500px">
+		<img src="img/1/1-sounds.png" style="width:230px"/>
 	</div>	
 
-	<div class="clickable-5" style="position:absolute; left:60%; top:500px;">
-		<img src="img/button.png" />
+	<div class="clickable-5" style="position:absolute; left:60%; top:500px">
+		<img src="img/1/1-memory.png" style="width:230px"/>
 	</div>	
 </div>
