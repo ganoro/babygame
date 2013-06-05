@@ -49,11 +49,23 @@ var app = {
     devicereadyEvent : function() {
         var self = this;
 
+        $('#cloud1').transition({ y: '420px',  x: '200px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud2').transition({ y: '460px',  x: '500px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud3').transition({ y: '450px',  x: '-300px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud4').transition({ y: '520px',  x: '10px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud5').transition({ rotateX: '180deg' }).transition({ y: '-460px',  x: '-110px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud6').transition({ y: '-420px',  x: '200px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+        $('#cloud7').transition({ y: '-380px',  x: '-110px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
+
+        $('#sun').transition({ y: '400px',  x: '400px', easing: 'easeInOutCirc', delay : 2400, duration : 1400 })
+            .transition({ y: '390px',  x: '400px', easing: 'easeInOutCirc', duration : 1000 });
+
+
         $('#logo1').transition({ scale: 1.1 , easing: 'easeInOutCirc', duration: 700})
             .transition({ scale: 1 , easing: 'easeInOutCirc', delay : 200, duration: 700 }, function() {
-                $('#gback').fadeTo(8000, 1);
-                $('#logo1').fadeTo(2000, 0);
-                $('#logo2').fadeTo(2000, 0, function() {
+                $('#gback').fadeTo(4000, 1);
+                $('#logo1').fadeTo(1000, 0);
+                $('#logo2').fadeTo(1000, 0, function() {
                     // $('#gsplash').fadeTo(0, 0);
                     $('.puzzle').fadeTo('slow', 1);
                     $('.memory').fadeTo('slow', 1);
@@ -61,23 +73,19 @@ var app = {
                     $('.sounds').fadeTo('slow', 1);
                     $('.mute').fadeTo('slow', 1);
                     $('.purchase').fadeTo('slow', 1);
-
-                    $('#cloud1').transition({ y: '420px',  x: '200px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud2').transition({ y: '460px',  x: '500px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud3').transition({ y: '450px',  x: '-300px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud4').transition({ y: '520px',  x: '10px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud6').transition({ y: '-420px',  x: '200px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud7').transition({ y: '-380px',  x: '-110px', easing: 'easeInOutCirc', duration : 1400 });
-                    $('#cloud5').transition({ rotateX: '180deg' })
-                        .transition({ y: '-460px',  x: '-110px', easing: 'easeInOutCirc', duration : 1400 });
-
-                    $('#sun').transition({ y: '400px',  x: '400px', easing: 'easeInOutCirc', delay : 1000, duration : 1400 })
-                        .transition({ y: '390px',  x: '400px', easing: 'easeInOutCirc', duration : 1000 });
-
-                    return;
-                    self.start();
+                
+                    $('.puzzle').css({ transformOrigin: '10px 10px' }).transition({ x: '+=4', y: '+=4', rotate: '2deg', easing: 'easeInOutCirc', duration : 1000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', duration : 2000 });
+                    $('.memory').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '-4deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
+                    $('.painting').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '3deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
+                    $('.sounds').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '-2deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
 
                 });
+
+                return;
+                self.start();
+
+
+
             
             });
     },
