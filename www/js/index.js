@@ -48,46 +48,26 @@ var app = {
 
     devicereadyEvent : function() {
         var self = this;
-
-        $('#cloud1').transition({ y: '420px',  x: '200px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud2').transition({ y: '460px',  x: '500px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud3').transition({ y: '450px',  x: '-300px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud4').transition({ y: '520px',  x: '10px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud5').transition({ rotateX: '180deg' }).transition({ y: '-460px',  x: '-110px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud6').transition({ y: '-420px',  x: '200px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-        $('#cloud7').transition({ y: '-380px',  x: '-110px', easing: 'easeInOutCirc', delay : 1400, duration : 1400 });
-
-        $('#sun').transition({ y: '400px',  x: '400px', easing: 'easeInOutCirc', delay : 2400, duration : 1400 })
-            .transition({ y: '390px',  x: '400px', easing: 'easeInOutCirc', duration : 1000 });
-
-
-        $('#logo1').transition({ scale: 1.1 , easing: 'easeInOutCirc', duration: 700})
-            .transition({ scale: 1 , easing: 'easeInOutCirc', delay : 200, duration: 700 }, function() {
-                $('#gback').fadeTo(4000, 1);
-                $('#logo1').fadeTo(1000, 0);
-                $('#logo2').fadeTo(1000, 0, function() {
-                    // $('#gsplash').fadeTo(0, 0);
-                    $('.puzzle').fadeTo('slow', 1);
-                    $('.memory').fadeTo('slow', 1);
-                    $('.painting').fadeTo('slow', 1);
-                    $('.sounds').fadeTo('slow', 1);
-                    $('.mute').fadeTo('slow', 1);
-                    $('.purchase').fadeTo('slow', 1);
-                
-                    $('.puzzle').css({ transformOrigin: '10px 10px' }).transition({ x: '+=4', y: '+=4', rotate: '2deg', easing: 'easeInOutCirc', duration : 1000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', duration : 2000 });
-                    $('.memory').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '-4deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
-                    $('.painting').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '3deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
-                    $('.sounds').css({ transformOrigin: '10px 10px' }).transition({ translate: '+=4', rotate: '-2deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 }).transition({ rotate: '0deg', easing: 'easeInOutCirc', delay : 1400, duration : 5000 });
-
-                });
-
-                return;
-                self.start();
-
-
-
+        $('#logo1').transition({ scale: 1.1 , easing: 'easeOutCirc', duration: 700})
+            .transition({ scale: 1 , easing: 'easeOutCirc', delay : 200, duration: 700 }, function() {
+            $('#gback').fadeTo(3000, 1);
+            $('#logo1').fadeTo(2000, 0);
+            $('#logo2').fadeTo(2000, 0);
             
+            $('#cloud2').transition({ y: '460px',  x: '500px', easing: 'easeOutCirc', duration : 2700 });
+            $('#cloud3').transition({ y: '450px',  x: '-300px', easing: 'easeOutCirc', duration : 2500 });
+            $('#cloud6').transition({ y: '-420px',  x: '120px', easing: 'easeOutCirc', duration : 2400 });
+            $('#giraph').transition({ x: '-370px', easing: 'easeOutCirc', delay : 2000, duration : 2234 });
+
+            $('#sun').transition({ y: '400px',  x: '400px', easing: 'easeOutCirc', duration : 2000 })
+                .transition({ y: '360px', easing: 'easeOutCirc', duration : 1000 }, function() {
+                    self.start();
             });
+
+
+
+
+        });
     },
 
     start : function() {
@@ -134,6 +114,9 @@ var app = {
         });
 
         switch(parseInt(ctx.params.id)) {
+            case 1:
+                app.main();
+                break;
             case 2 :
                 app.puzzlePage();
                 break;
@@ -164,6 +147,38 @@ var app = {
 
     soundPage : function() {
         // var p = new Sound();
+    },
+
+    main : function() {
+        $('.question').fadeTo('slow', 1);
+        $('.mute').fadeTo('slow', 1);
+        $('.purchase').fadeTo('slow', 1);
+
+        $('.memory').fadeTo('slow', 1);
+        $('.puzzle').fadeTo('slow', 1);
+        $('.painting').fadeTo('slow', 1, function() {
+            $('.paintingface').transition({ rotate: '15deg' });
+            $('.paintingface').fadeTo('slow', 1);
+            $('.paintingface').transition({ y : '-80px', delay: 3200, duration : 600 }).transition({ y : '30px', delay: 1000, duration : 1900 });
+        });
+
+        
+        $('#airplain').transition({ rotateY: '180deg' });
+        $('#airplain').transition({ x: '-160px', easing: 'linear', delay : 6000, duration : 1400 }).transition({ x: '-110px', easing: 'linear', duration : 800 });
+
+        $('.puzzle').transition({ delay: 1300, scale: '1.1', duration : 200 }).transition({ scale: '1', duration : 200 });
+        $('.painting').transition({ delay: 2300, scale: '1.1', duration : 200 }).transition({ scale: '1', duration : 200 });
+        $('.memory').transition({ delay: 3300, scale: '1.1', duration : 200 }).transition({ scale: '1', duration : 200 });
+    
+        for (var i = 1; i < 100; i++) {
+            $('.buttons').css({ transformOrigin: '100% 100%' }).transition({ x: (i % 2 == 0 ? '+=1' : '-=1'), rotate: (i % 2 == 0 ? "-1deg" : "1deg"), duration : 7000 });
+            $('.puzzle').css({ transformOrigin: '4px 7px' }).transition({ translate: '+=4', rotate: '-4deg', easing: 'easeOutCirc', delay : 400, duration : 5000 })
+                .transition({ translate: '-=4', rotate: '1deg', easing: 'easeOutCirc', delay : 3400, duration : 5000 });
+            $('.memory').css({ transformOrigin: '10px 8px' }).transition({ translate: '+=2', rotate: '-4deg', easing: 'easeOutCirc', delay : 300, duration : 5000 })
+                .transition({ translate: '-=2', rotate: '1deg', easing: 'easeOutCirc', delay : 8400, duration : 5000 });
+            $('.painting').css({ transformOrigin: '-4px 5px' }).transition({ translate: '-=6', rotate: '3deg', easing: 'easeOutCirc', delay : 200, duration : 5000 })
+                .transition({ translate: '+=6', rotate: '-1deg', easing: 'easeOutCirc', delay : 400, duration : 5000 });
+        };
     },
 
     loadAssetFile : function(filename) {
