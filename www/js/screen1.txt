@@ -13,7 +13,9 @@
 <div id="airplain" style="position:absolute; left:-20%; top:5%;z-index:1555">
     <img src="img/1/1-airplain.png" style="width:140px" />
 </div>
-
+<div id="title" style="position:absolute; left:60%; top:-30%;z-index:1555">
+    <div style="font-family:Coco; font-size: 120px;-webkit-text-stroke-color: #E65C00;-webkit-text-stroke-width: 3px;color:white"><b>&nbsp;חיות<br>!בכיף</b></div>
+</div>
 <div id="sun" style="position:absolute; left:707px; top:-40px;z-index:-20">
     <img src="img/1/1-sun.png" style="width:250px" />
 </div>

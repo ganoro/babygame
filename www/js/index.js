@@ -58,15 +58,11 @@ var app = {
             $('#cloud3').transition({ y: '450px',  x: '-300px', easing: 'easeOutCirc', duration : 2500 });
             $('#cloud6').transition({ y: '-420px',  x: '120px', easing: 'easeOutCirc', duration : 2400 });
             $('#giraph').transition({ x: '-370px', easing: 'easeOutCirc', delay : 2000, duration : 2234 });
-
+            $('#title').css({ transformOrigin: '800px 800px'}).transition({ rotate: '-25deg', delay : 1000, duration : 2000});
             $('#sun').transition({ y: '400px',  x: '400px', easing: 'easeOutCirc', duration : 2000 })
                 .transition({ y: '360px', easing: 'easeOutCirc', duration : 1000 }, function() {
                     self.start();
             });
-
-
-
-
         });
     },
 
@@ -162,7 +158,9 @@ var app = {
             $('.paintingface').transition({ y : '-80px', delay: 3200, duration : 600 }).transition({ y : '30px', delay: 1000, duration : 1900 });
         });
 
-        
+        $('#title').css({ rotate: '-25deg', transformOrigin: '800px 800px'});
+
+
         $('#airplain').transition({ rotateY: '180deg' });
         $('#airplain').transition({ x: '-160px', easing: 'linear', delay : 6000, duration : 1400 }).transition({ x: '-110px', easing: 'linear', duration : 800 });
 
