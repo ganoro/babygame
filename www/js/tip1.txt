@@ -1,0 +1,17 @@
+<!-- http://www.sela.org.il/index.php?mact=News,cntnt01,detail,0&cntnt01articleid=365&cntnt01origid=70&cntnt01returnid=77 -->
+<div style='direction:rtl;font-family:Coco'> 
+<div class="marker_tip">
+	<img src='img/4/4-pen-3.png' style='width:42%'>
+</div>
+<h1 style='color:blue'><b>חיזוק קשר הורה-ילד</b></h1>
+<h2>
+<span style="background-color:#F290BB"><b>סביבה תומכת </b></span> מספקת לילד אפשרות לפתח את יכולותיו.<br/>
+ההורה תומך בו בכך שמאמין ביכולותיו, <br/>
+בכך <span style="background-color:#F290BB">ששותף בפעילויות שונות </span>איתו, <br/>
+ובכך שמאפשר לו לחקור את סביבתו באופן אקטיבי, <br/> 
+גם אם הדבר כרוך בחוסר נוחות עבור ההורה.<br/>
+</h2>
+</div>
+<div style='color:red'>
+כל יום טיפ חדש
+</div>

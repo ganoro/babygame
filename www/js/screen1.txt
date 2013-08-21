@@ -10,7 +10,7 @@
 <div id="giraph" style="z-index:-10;position:absolute; left:664px; top:270px">
     <img src="img/giraph.png" style="width:300px" />
 </div>
-<div id="airplain" style="position:absolute; left:-20%; top:5%;z-index:1555">
+<div id="airplain" style="position:absolute; left:-20%; top:5%;z-index:2555">
     <img src="img/1/1-airplain.png" style="width:140px" />
 </div>
 <div id="title" style="position:absolute; left:60%; top:-30%;z-index:1555">
@@ -19,28 +19,30 @@
 <div id="sun" style="position:absolute; left:707px; top:-40px;z-index:-20">
     <img src="img/1/1-sun.png" style="width:250px" />
 </div>
-<div class="buttons" style="position:relative;z-index:2500" >     
-    <div class="puzzle" style="position:absolute; left:16%; top:150px;z-index:1500;display:none">
-        <img src="img/1/1-puzzle.png" style="width:190px" />
-    </div>
-    <div class="painting" style="position:absolute; left:26%; top:350px;z-index:1600;display:none">
+<div class="buttons" style="position:relative;z-index:2500">
+
+    <div class="painting clickable-3" style="position:absolute; left:16%; top:150px;z-index:1500;display:none">
         <img src="img/1/1-painting.png" style="width:190px"/>
+    </div>
+    <div class="memory clickable-3" style="position:absolute; left:26%; top:350px;z-index:1600;display:none">
+            <img src="img/1/1-memory.png" style="width:190px"/>
     </div>  
-    <div class="paintingface" style="position:absolute; left:29%; top:348px;z-index:1580;display:none">
+    <div class="paintingface" style="position:absolute; left:31%; top:347px;z-index:1580;display:none">
         <img src="img/1/1-face-1.png" style="width:130px"/>
     </div>  
-    <div class="memory" style="position:absolute; left:11%; top:520px;z-index:1800;display:none">
-        <img src="img/1/1-memory.png" style="width:190px"/>
+    <div class="puzzle clickable-2" style="position:absolute; left:11%; top:520px;z-index:1800;display:none">
+        <img src="img/1/1-puzzle.png" style="width:190px" />
+
     </div> 
 </div>
 
- <div class="mute" style="position:absolute; left:41%; top:66%;z-index:2000;display:none">
-     <img src="img/1/1-mute.png" style="width:60px"/>
+ <div class="mute callable-sound" style="position:absolute; left:39%; top:66%;z-index:2000;display:none">
+     <img class="mute_img" src="img/1/1-mute.png" style="width:60px"/>
 </div> 
-<div class="purchase" style="position:absolute; left:55%; top:66%;z-index:2000;display:none">
-     <img src="img/1/1-purchase.png" style="width:60px"/>
-</div> 
-<div class="question" style="position:absolute; left:48%; top:66%;z-index:2000;display:none">
+<div class="question callable-question" style="position:absolute; left:48%; top:66%;z-index:2000;display:none">
      <img src="img/1/1-question.png" style="width:60px"/>
+</div> 
+<div class="purchase callable-purchase" style="position:absolute; left:57%; top:66%;z-index:2000;display:none">
+     <img src="img/1/1-purchase.png" style="width:60px"/>
 </div> 
 

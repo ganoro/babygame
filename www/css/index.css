@@ -99,6 +99,10 @@ h1 {
     border : solid medium black;
 }
 
-
+.marker_tip {
+    left: -29%;
+    top: -18%;
+    position:absolute;
+}
 
 
